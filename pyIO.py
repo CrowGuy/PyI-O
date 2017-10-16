@@ -1,4 +1,17 @@
+class pyIO:
+    def __init__(self, fileName, path=None):
+        self.fileName = fileName
+        self.path = path
 
+    def writeFile(slef, content):
+        file = open(str(self.path) + str(self.fileName),"w")
+        file.write(content)
+        file.close()
+  
+    def readFile(self):
+        with open(str(self.path) + str(self.fileName)) as file:
+            data = file.read()
+           
 
 if __name__ == '__main__':
     """ This is open file code example. """
