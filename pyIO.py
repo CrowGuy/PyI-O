@@ -1,6 +1,6 @@
 import os
 class pyIO:
-    def __init__(self, fileName, path=None, data=[]):
+    def __init__(self, fileName, path='', data=[]):
         self.fileName = fileName   # the operate file name
         self.path = path           # the path of file
         self.data = data           # the empty list for store data in file
@@ -18,14 +18,18 @@ class pyIO:
             else:
                 self.data.append(file.readline())
         file.close()
-    
-    def renameFile(self, newPath=None, newName):
+     
+    def renameFile(self, newName, newPath=''):
         os.rename(str(self.path) + str(self.fileName), str(newPath) + str(newName))
     
     def removeFile(self):
         os.remove(str(self.path) + str(self.fileName))
-
+    
 if __name__ == '__main__':
+    file1 = pyIO("test.txt")
+    file1.writeTxt("Hello world")
+    file1.readTxt()
+    print file1.data
     """ This is open file code example. """
     # this is open file example code.
     file = open("testfile.txt","w")
