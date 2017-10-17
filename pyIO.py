@@ -1,17 +1,29 @@
+import os
 class pyIO:
-    def __init__(self, fileName, path=None):
-        self.fileName = fileName
-        self.path = path
+    def __init__(self, fileName, path=None, data=[]):
+        self.fileName = fileName   # the operate file name
+        self.path = path           # the path of file
+        self.data = data           # the empty list for store data in file
 
-    def writeFile(slef, content):
+    def writeTxt(self, content):
         file = open(str(self.path) + str(self.fileName),"w")
         file.write(content)
         file.close()
   
-    def readFile(self):
+    def readTxt(self, separator=None):
         with open(str(self.path) + str(self.fileName)) as file:
-            data = file.read()
-           
+            if separator:
+                row = file.read().split(separator)
+                self.data.append(row)
+            else:
+                self.data.append(file.readline())
+        file.close()
+    
+    def renameFile(self, newPath=None, newName):
+        os.rename(str(self.path) + str(self.fileName), str(newPath) + str(newName))
+    
+    def removeFile(self):
+        os.remove(str(self.path) + str(self.fileName))
 
 if __name__ == '__main__':
     """ This is open file code example. """
