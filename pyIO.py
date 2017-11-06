@@ -34,10 +34,12 @@ class pyIO:
         with open(str(self.path) + str(self.fileName)) as file:
             if delimiter:
                 rows = file.read().split("\n")
-                rows.remove('')
+                if '' in rows:
+                    rows.remove('')
                 for row in rows:
                     item = row.split(delimiter)
-                    item.remove('')
+                    if '' in item:
+                        item.remove('')
                     data.append(item)
             else:
                 data.append(file.readline())
@@ -51,11 +53,12 @@ class pyIO:
         os.remove(str(self.path) + str(self.fileName))
     
 if __name__ == '__main__':
-    statistic = [[1,50],[2,100],[2,300]]
-
-    file1 = pyIO("test.txt")
+    #statistic = [[1,50],[2,100],[2,300]]
+    file1 = pyIO("mnistdata.txt")
     #file1.writeTxt(statistic,",")
-    print file1.readTxt( ",")
+    data = file1.readTxt( ",")
+    file2 = pyIO("mnistdata.xlsx")
+    file2.writeExcel("sheet1",data)
     """
     file2 = pyIO("exltest.xlsx")
     file2.writeExcel("sheet1", statistic, ["A","B"])
