@@ -95,10 +95,7 @@ class pyIO:
         with xlrd.open_workbook(str(self.path) + str(self.fileName)) as workbook:
             worksheet = workbook.sheet_by_index(sheet_ind)
             for nrow in range(worksheet.nrows):
-                tmp = []
-                for ncol in range(worksheet.ncols):
-                    tmp.append(worksheet.row_values(nrow)[ncol])
-                data.append(tmp)
+                data.append(worksheet.row_values(nrow))
         workbook.release_resources()
         return data
 
