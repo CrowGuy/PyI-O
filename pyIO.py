@@ -22,9 +22,10 @@ class pyIO:
             delimiter: A string format, the symbol which you want to split
             header: The field name of data statistics 
         """
-        if not self.path and not os.path.isdir(self.path):
-            os.makedirs(self.path)
-
+        if self.path:
+            if not os.path.isdir(self.path):
+                os.makedirs(self.path)
+                
         file = open(str(self.path) + str(self.fileName), "w")
         if header:
             for field in header:
@@ -42,8 +43,9 @@ class pyIO:
             data: A list format, the content you want to write.
             header: The field name of data statistics.
         """
-        if not self.path and not os.path.isdir(self.path):
-            os.makedirs(self.path)
+        if self.path: 
+            if not os.path.isdir(self.path):
+                os.makedirs(self.path)
 
         workbook = xlsxwriter.Workbook(str(self.path) + str(self.fileName))
         worksheet = workbook.add_worksheet(sheet)
