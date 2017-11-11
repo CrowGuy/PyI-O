@@ -109,9 +109,9 @@ class pyIO:
     
 if __name__ == '__main__':
     #statistic = [[1,50],[2,100],[2,300]]
-    #file1 = pyIO("mnistdata.txt")
+    file1 = pyIO("mnistdata.txt","./test/")
     #file1.writeTxt(statistic,",")
-    #data = file1.readTxt( ",")
+    data = file1.readTxt( ",")
     #file2 = pyIO("mnistdata.xlsx")
     #file2.writeExcel("sheet1",data)
     #data = file2.readExcel(0)
