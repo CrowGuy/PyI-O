@@ -6,16 +6,27 @@ import numpy as np
 import ConfigParser
 
 class dataPlot(object):
-    """docstring for dataPlot"""
+    """Summary of dataPlot class
+    This class is a plot object, which provide plot functions
+    based on matplotli.
+
+    Attributes:
+        data: A list format, the statistics of x and y.
+            example: [[x,y1,y2],[x,y1,y2]]
+        multi: A boolean format, whether data with multi kind y values.
+        title: A string format, the title name of graph.
+        save_bit: A boolean format, whether to save the figure.
+    """
     def __init__(self, data, multi, title, save_bit):
+        """Initial dataPlot class."""
         self.data = data            # The data of x and y
         self.title = title          # Title of graph
         self.save_bit = save_bit    # Whether save or not
         self.config = ConfigParser.ConfigParser()
         self.multi = multi
-
+        
+        # Initialize the x and y datas
         self.y = []
-
         self.data = map(list, zip(*self.data))
         self.x = self.data[0]
         for ind in range(len(self.data)-1):
@@ -23,7 +34,11 @@ class dataPlot(object):
         
 
     def linePlot(self, xname='', yname=''):
-        """docstring for linePlot"""
+        """Accordinig to the data draw Line graph.
+        Args:
+            xname: the label of x axis.
+            yname: the label of y axis.
+        """
         # Read the params from Config
         self.config.read('plotConfig.ini')
         self.graph = 'Line'
@@ -43,8 +58,8 @@ class dataPlot(object):
                                      linewidth=float(line_width[0]) , \
                                      label=label_name[0], \
                                      marker=marker_type[0])
-            plt.legend(borderaxespad=0, bbox_to_anchor=(1.08,1))
-            plt.subplots_adjust(right=0.8)
+            plt.legend(borderaxespad=0, bbox_to_anchor=(0.99,0.99))
+            plt.subplots_adjust(right=0.95)
             plt.show()
         else:
             for ind, y in enumerate(self.y):
@@ -52,12 +67,17 @@ class dataPlot(object):
                                     linewidth=float(line_width[ind]), \
                                     label=label_name[ind], \
                                     marker=marker_type[ind])
-            plt.legend(borderaxespad=0, bbox_to_anchor=(1.30,1))
-            plt.subplots_adjust(right=0.8)
+            plt.legend(borderaxespad=0, bbox_to_anchor=(0.99,0.99))
+            plt.subplots_adjust(right=0.95)
             plt.show()
 
     def scatterPlot(self, xname, yname):
         """docstring for scatterPlot"""
+        """Accordinig to the data draw Scatter graph.
+        Args:
+            xname: the label of x axis.
+            yname: the label of y axis.
+        """
         # Read the params from Config
         self.config.read('plotConfig.ini')
         self.graph = 'Scatter'
@@ -74,19 +94,23 @@ class dataPlot(object):
         if not self.multi:
             plt.scatter(self.x, self.y, c=scat_color[0], \
                                         label=scat_group[0])
-            plt.legend(borderaxespad=0, bbox_to_anchor=(1.04,1))
-            plt.subplots_adjust(right=0.9)
+            plt.legend(borderaxespad=0, bbox_to_anchor=(0.99,0.99))
+            plt.subplots_adjust(right=0.95)
             plt.show()
         else:
             for ind, y in enumerate(self.y):
                 plt.scatter(self.x, y, c=scat_color[ind], \
                                        label=scat_group[ind])
-            plt.legend(borderaxespad=0, bbox_to_anchor=(1.04,1))
-            plt.subplots_adjust(right=0.9)
+            plt.legend(borderaxespad=0, bbox_to_anchor=(0.99,0.99))
+            plt.subplots_adjust(right=0.95)
             plt.show()
 
-    def barPlot(self, xname='', yname=''):
-        """docstring for barPlot"""        
+    def barPlot(self, xname='', yname=''):    
+        """Accordinig to the data draw Bar graph.
+        Args:
+            xname: the label of x axis.
+            yname: the label of y axis.
+        """
         # Read the params from Config
         self.config.read('plotConfig.ini')
         self.graph = 'Bar'
@@ -106,7 +130,7 @@ class dataPlot(object):
             plt.bar(N, self.y, width=float(bar_width[0]), \
                                color=bar_color[0])
             plt.legend(bar_group[0], borderaxespad=0, \
-                                     bbox_to_anchor=(1.04,1))
+                                     bbox_to_anchor=(0.99,0.99))
             plt.subplots_adjust(right=0.95)
             plt.show()
         else:
@@ -115,15 +139,22 @@ class dataPlot(object):
                 plt.bar(N + ind*float(bar_width[ind]), y, 
                         width=float(bar_width[ind]), 
                         color=bar_color[ind])
-            plt.legend(bar_group, borderaxespad=0, bbox_to_anchor=(1.04,1))
+            plt.legend(bar_group, borderaxespad=0,
+                                  bbox_to_anchor=(0.99,0.99))
             plt.subplots_adjust(right=0.95)
             plt.show()
 
-
     def boxPlot(self):
         """docstring for boxPlot"""
+        """Accordinig to the data draw Box graph.
+        Args:
+            xname: the label of x axis.
+            yname: the label of y axis.
+        """
         
 if __name__ == '__main__':
+    """The function test example"""
+    # Set the data examples
     item_single = [[100,95],[150,92],[200,90.1],\
                    [250,89.53],[300,87.78],[350,85.24],\
                    [400,79.89],[450,76.46],[500,72.88]]
@@ -131,10 +162,13 @@ if __name__ == '__main__':
                   [250,89.53,91.6],[300,87.78,89.92],[350,85.2,87.1],\
                   [400,79.89,84.29],[450,76.4,80.1],[500,72.8,76.5]]
 
+    # The example of single y axis value data
     #graph1 = dataPlot(item_single, 'Example 01', False)
     #graph1.linePlot(False,'#','%')
     #graph1.scatterPlot(False, '#','%')
     #graph1.barPlot(False, '#', '%')
+    
+    # The example of multi y axis value data
     graph2 = dataPlot(item_multi, True, 'Example 01', False)
     graph2.linePlot('#','%')
     graph2.scatterPlot('#','%')

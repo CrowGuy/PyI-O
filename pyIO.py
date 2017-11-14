@@ -1,7 +1,7 @@
 import os
 import xlsxwriter
 import xlrd
-import os
+
 class pyIO:
     """ Summary of this class
     This class provide Write and Read function for txt, xls, xlsx files.
@@ -108,15 +108,18 @@ class pyIO:
         os.remove(str(self.path) + str(self.fileName))
     
 if __name__ == '__main__':
-    #statistic = [[1,50],[2,100],[2,300]]
+    """The example to test functions"""
+    
+    # Initialize the testing data list 
+    statistic = [[1,50],[2,100],[2,300]]
+
+    # The example of writting and reading for txt file.
     file1 = pyIO("mnistdata.txt","./test/")
-    #file1.writeTxt(statistic,",")
+    file1.writeTxt(statistic,",")
     data = file1.readTxt( ",")
-    #file2 = pyIO("mnistdata.xlsx")
-    #file2.writeExcel("sheet1",data)
-    #data = file2.readExcel(0)
-    """
-    file2 = pyIO("exltest.xlsx")
-    file2.writeExcel("sheet1", statistic, ["A","B"])
-    """
+    
+    # The example of writting and reading for xlsx file.
+    file2 = pyIO("mnistdata.xlsx")
+    file2.writeExcel("sheet1",data)
+    data = file2.readExcel(0)
 
