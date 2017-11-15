@@ -24,9 +24,7 @@ class dataPlot(object):
         self.save_bit = save_bit    # Whether save or not
         self.parser = ConfigParser()
         dirnow = os.path.dirname(os.path.abspath(__file__))
-        print dirnow
         self.config = os.path.join(dirnow, 'config/plotConfig.ini')
-        print self.config
         self.multi = multi
         
         # Initialize the x and y datas
@@ -34,8 +32,10 @@ class dataPlot(object):
         self.data = map(list, zip(*self.data))
         self.x = self.data[0]
         for ind in range(len(self.data)-1):
-            self.y.append(self.data[ind+1])
-        
+            if self.multi:
+                self.y.append(self.data[ind+1])
+            else:
+                self.y.extend(self.data[ind+1])
 
     def linePlot(self, xname='', yname=''):
         """Accordinig to the data draw Line graph.
@@ -134,7 +134,7 @@ class dataPlot(object):
             plt.xticks(N, self.x)
             plt.bar(N, self.y, width=float(bar_width[0]), \
                                color=bar_color[0])
-            plt.legend(bar_group[0], borderaxespad=0, \
+            plt.legend(bar_group, borderaxespad=0, \
                                      bbox_to_anchor=(0.99,0.99))
             plt.subplots_adjust(right=0.95)
             plt.show()
