@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+import os.path
 import matplotlib.pyplot as plt
 import numpy as np
-import ConfigParser
+from configparser import ConfigParser
 
 class dataPlot(object):
     """Summary of dataPlot class
@@ -22,7 +22,11 @@ class dataPlot(object):
         self.data = data            # The data of x and y
         self.title = title          # Title of graph
         self.save_bit = save_bit    # Whether save or not
-        self.config = ConfigParser.ConfigParser()
+        self.parser = ConfigParser()
+        dirnow = os.path.dirname(os.path.abspath(__file__))
+        print dirnow
+        self.config = os.path.join(dirnow, 'config/plotConfig.ini')
+        print self.config
         self.multi = multi
         
         # Initialize the x and y datas
@@ -40,14 +44,15 @@ class dataPlot(object):
             yname: the label of y axis.
         """
         # Read the params from Config
-        self.config.read('plotConfig.ini')
+        
+        self.parser.read(self.config)
         self.graph = 'Line'
-        line_color = self.config.get(self.graph, 'LineColor').split(',')
-        line_width = self.config.get(self.graph, 'LineWidth').split(',')
-        label_name = self.config.get(self.graph, 'LabelName').split(',')
-        marker_type = self.config.get(self.graph, 'MarkerType').split(',')
-        graph_grid = self.config.get(self.graph, 'GraphGrid')
-        grid_style = self.config.get(self.graph, 'GridStyle')
+        line_color = self.parser.get(self.graph, 'LineColor').split(',')
+        line_width = self.parser.get(self.graph, 'LineWidth').split(',')
+        label_name = self.parser.get(self.graph, 'LabelName').split(',')
+        marker_type = self.parser.get(self.graph, 'MarkerType').split(',')
+        graph_grid = self.parser.get(self.graph, 'GraphGrid')
+        grid_style = self.parser.get(self.graph, 'GridStyle')
 
         plt.grid(graph_grid,linestyle=grid_style)
         plt.title(self.title)
@@ -79,12 +84,12 @@ class dataPlot(object):
             yname: the label of y axis.
         """
         # Read the params from Config
-        self.config.read('plotConfig.ini')
+        self.parser.read(self.config)
         self.graph = 'Scatter'
-        scat_color = self.config.get(self.graph, 'ScatterColor').split(',')
-        scat_group = self.config.get(self.graph, 'GroupLabel').split(',')
-        graph_grid = self.config.get(self.graph, 'GraphGrid')
-        grid_style = self.config.get(self.graph, 'GridStyle')
+        scat_color = self.parser.get(self.graph, 'ScatterColor').split(',')
+        scat_group = self.parser.get(self.graph, 'GroupLabel').split(',')
+        graph_grid = self.parser.get(self.graph, 'GraphGrid')
+        grid_style = self.parser.get(self.graph, 'GridStyle')
         
         plt.grid(graph_grid, linestyle=grid_style)
         plt.title(self.title)
@@ -112,14 +117,14 @@ class dataPlot(object):
             yname: the label of y axis.
         """
         # Read the params from Config
-        self.config.read('plotConfig.ini')
+        self.parser.read(self.config)
         self.graph = 'Bar'
         N = np.arange(len(self.x))
-        bar_color = self.config.get(self.graph, 'BarColor').split(',')
-        bar_width = self.config.get(self.graph, 'BarWidth').split(',')
-        bar_group = self.config.get(self.graph, 'GroupLabel').split(',')
-        graph_grid = self.config.get(self.graph, 'GraphGrid')
-        grid_style = self.config.get(self.graph, 'GridStyle')
+        bar_color = self.parser.get(self.graph, 'BarColor').split(',')
+        bar_width = self.parser.get(self.graph, 'BarWidth').split(',')
+        bar_group = self.parser.get(self.graph, 'GroupLabel').split(',')
+        graph_grid = self.parser.get(self.graph, 'GraphGrid')
+        grid_style = self.parser.get(self.graph, 'GridStyle')
 
         plt.grid(graph_grid, linestyle=grid_style)
         plt.title(self.title)
