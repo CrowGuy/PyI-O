@@ -2,7 +2,7 @@ import os
 import xlsxwriter
 import xlrd
 
-class pyIO:
+class fileRW:
     """ Summary of this class
     This class provide Write and Read function for txt, xls, xlsx files.
 
@@ -114,12 +114,12 @@ if __name__ == '__main__':
     statistic = [[1,50],[2,100],[2,300]]
 
     # The example of writting and reading for txt file.
-    file1 = pyIO("mnistdata.txt","./test/")
+    file1 = fileRW("mnistdata.txt","./test/")
     file1.writeTxt(statistic,",")
     data = file1.readTxt( ",")
     
     # The example of writting and reading for xlsx file.
-    file2 = pyIO("mnistdata.xlsx")
+    file2 = fileRW("mnistdata.xlsx")
     file2.writeExcel("sheet1",data)
     data = file2.readExcel(0)
 
