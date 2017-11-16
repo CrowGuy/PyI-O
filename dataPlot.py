@@ -1,3 +1,7 @@
+"""This is an class function for python plot by using matplotlib. 
+   @author: CowGuy
+"""
+
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import os.path

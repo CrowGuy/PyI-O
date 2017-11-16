@@ -1,3 +1,7 @@
+
+"""This is an class function for python file read/write. 
+   @author: CowGuy
+"""
 import os
 import xlsxwriter
 import xlrd
