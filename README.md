@@ -1,4 +1,4 @@
-# PyI-OI
+# PyIO
 The main goal of this project is to build the functions about daily computer works, make all jobs more efficiency. In addition, we hope the function of file read/write and data plot can help the people who need statistics analysis.
 ## Getting Started
 Before use these class functions, we need to install some python plugins by instructions as follow, and the environment of mine is ubuntu 14.04LTS, pyhton 2.7.
