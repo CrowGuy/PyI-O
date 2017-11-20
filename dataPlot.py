@@ -57,6 +57,7 @@ class dataPlot(object):
         marker_type = self.parser.get(self.graph, 'MarkerType').split(',')
         graph_grid = self.parser.get(self.graph, 'GraphGrid')
         grid_style = self.parser.get(self.graph, 'GridStyle')
+        img_name = self.parser.get(self.graph, 'ImgName')
 
         plt.grid(graph_grid,linestyle=grid_style)
         plt.title(self.title)
@@ -69,6 +70,11 @@ class dataPlot(object):
                                      marker=marker_type[0])
             plt.legend(borderaxespad=0, bbox_to_anchor=(0.99,0.99))
             plt.subplots_adjust(right=0.95)
+            
+            # Check wether to save the fig
+            if self.save_bit:
+                plt.savefig(img_name)
+            
             plt.show()
         else:
             for ind, y in enumerate(self.y):
@@ -78,6 +84,11 @@ class dataPlot(object):
                                     marker=marker_type[ind])
             plt.legend(borderaxespad=0, bbox_to_anchor=(0.99,0.99))
             plt.subplots_adjust(right=0.95)
+            
+            # Check wether to save the fig
+            if self.save_bit:
+                plt.savefig(img_name)
+            
             plt.show()
 
     def scatterPlot(self, xname, yname):
@@ -94,6 +105,7 @@ class dataPlot(object):
         scat_group = self.parser.get(self.graph, 'GroupLabel').split(',')
         graph_grid = self.parser.get(self.graph, 'GraphGrid')
         grid_style = self.parser.get(self.graph, 'GridStyle')
+        img_name = self.parser.get(self.graph, 'ImgName')
         
         plt.grid(graph_grid, linestyle=grid_style)
         plt.title(self.title)
@@ -105,6 +117,11 @@ class dataPlot(object):
                                         label=scat_group[0])
             plt.legend(borderaxespad=0, bbox_to_anchor=(0.99,0.99))
             plt.subplots_adjust(right=0.95)
+            
+            # Check wether to save the fig
+            if self.save_bit:
+                plt.savefig(img_name)
+            
             plt.show()
         else:
             for ind, y in enumerate(self.y):
@@ -112,6 +129,11 @@ class dataPlot(object):
                                        label=scat_group[ind])
             plt.legend(borderaxespad=0, bbox_to_anchor=(0.99,0.99))
             plt.subplots_adjust(right=0.95)
+            
+            # Check wether to save the fig
+            if self.save_bit:
+                plt.savefig(img_name)
+            
             plt.show()
 
     def barPlot(self, xname='', yname=''):    
@@ -129,6 +151,7 @@ class dataPlot(object):
         bar_group = self.parser.get(self.graph, 'GroupLabel').split(',')
         graph_grid = self.parser.get(self.graph, 'GraphGrid')
         grid_style = self.parser.get(self.graph, 'GridStyle')
+        img_name = self.parser.get(self.graph, 'ImgName')
 
         plt.grid(graph_grid, linestyle=grid_style)
         plt.title(self.title)
@@ -141,6 +164,11 @@ class dataPlot(object):
             plt.legend(bar_group, borderaxespad=0, \
                                      bbox_to_anchor=(0.99,0.99))
             plt.subplots_adjust(right=0.95)
+            
+            # Check wether to save the fig
+            if self.save_bit:
+                plt.savefig(img_name)
+            
             plt.show()
         else:
             plt.xticks(N + float(bar_width[0]), self.x)
@@ -151,7 +179,13 @@ class dataPlot(object):
             plt.legend(bar_group, borderaxespad=0,
                                   bbox_to_anchor=(0.99,0.99))
             plt.subplots_adjust(right=0.95)
+            
+            # Check wether to save the fig
+            if self.save_bit:
+                plt.savefig(img_name)
+            
             plt.show()
+        
 
     def boxPlot(self):
         """docstring for boxPlot"""
@@ -178,7 +212,7 @@ if __name__ == '__main__':
     #graph1.barPlot(False, '#', '%')
     
     # The example of multi y axis value data
-    graph2 = dataPlot(item_multi, True, 'Example 01', False)
+    graph2 = dataPlot(item_multi, True, 'Example 01', True)
     graph2.linePlot('#','%')
     graph2.scatterPlot('#','%')
     graph2.barPlot('#', '%')
