@@ -59,6 +59,7 @@ class dataPlot(object):
         grid_style = self.parser.get(self.graph, 'GridStyle')
         img_name = self.parser.get(self.graph, 'ImgName')
 
+        fig = plt.figure(figsize=[8,5], dpi=100)
         plt.grid(graph_grid,linestyle=grid_style)
         plt.title(self.title)
         plt.xlabel(xname)
@@ -68,8 +69,8 @@ class dataPlot(object):
                                      linewidth=float(line_width[0]) , \
                                      label=label_name[0], \
                                      marker=marker_type[0])
-            plt.legend(borderaxespad=0, bbox_to_anchor=(0.99,0.99))
-            plt.subplots_adjust(right=0.95)
+            plt.legend(borderaxespad=0.2, bbox_to_anchor=(1.28,0.99))
+            plt.subplots_adjust(right=0.8)
             
             # Check wether to save the fig
             if self.save_bit:
@@ -82,8 +83,8 @@ class dataPlot(object):
                                     linewidth=float(line_width[ind]), \
                                     label=label_name[ind], \
                                     marker=marker_type[ind])
-            plt.legend(borderaxespad=0, bbox_to_anchor=(0.99,0.99))
-            plt.subplots_adjust(right=0.95)
+            plt.legend(borderaxespad=0.2, bbox_to_anchor=(1.28,0.99))
+            plt.subplots_adjust(right=0.8)
             
             # Check wether to save the fig
             if self.save_bit:
@@ -107,6 +108,7 @@ class dataPlot(object):
         grid_style = self.parser.get(self.graph, 'GridStyle')
         img_name = self.parser.get(self.graph, 'ImgName')
         
+        fig = plt.figure(figsize=[8,5], dpi=100)
         plt.grid(graph_grid, linestyle=grid_style)
         plt.title(self.title)
         plt.xlabel(xname)
@@ -115,8 +117,8 @@ class dataPlot(object):
         if not self.multi:
             plt.scatter(self.x, self.y, c=scat_color[0], \
                                         label=scat_group[0])
-            plt.legend(borderaxespad=0, bbox_to_anchor=(0.99,0.99))
-            plt.subplots_adjust(right=0.95)
+            plt.legend(borderaxespad=0.2, bbox_to_anchor=(1.28,0.99))
+            plt.subplots_adjust(right=0.8)
             
             # Check wether to save the fig
             if self.save_bit:
@@ -127,8 +129,8 @@ class dataPlot(object):
             for ind, y in enumerate(self.y):
                 plt.scatter(self.x, y, c=scat_color[ind], \
                                        label=scat_group[ind])
-            plt.legend(borderaxespad=0, bbox_to_anchor=(0.99,0.99))
-            plt.subplots_adjust(right=0.95)
+            plt.legend(borderaxespad=0.2, bbox_to_anchor=(1.28,0.99))
+            plt.subplots_adjust(right=0.8)
             
             # Check wether to save the fig
             if self.save_bit:
@@ -153,6 +155,7 @@ class dataPlot(object):
         grid_style = self.parser.get(self.graph, 'GridStyle')
         img_name = self.parser.get(self.graph, 'ImgName')
 
+        fig = plt.figure(figsize=[8,5], dpi=100)
         plt.grid(graph_grid, linestyle=grid_style)
         plt.title(self.title)
         plt.xlabel(xname)
@@ -161,9 +164,9 @@ class dataPlot(object):
             plt.xticks(N, self.x)
             plt.bar(N, self.y, width=float(bar_width[0]), \
                                color=bar_color[0])
-            plt.legend(bar_group, borderaxespad=0, \
-                                     bbox_to_anchor=(0.99,0.99))
-            plt.subplots_adjust(right=0.95)
+            plt.legend(bar_group, borderaxespad=0.2, \
+                                     bbox_to_anchor=(1.28,0.99))
+            plt.subplots_adjust(right=0.8)
             
             # Check wether to save the fig
             if self.save_bit:
@@ -176,9 +179,9 @@ class dataPlot(object):
                 plt.bar(N + ind*float(bar_width[ind]), y, 
                         width=float(bar_width[ind]), 
                         color=bar_color[ind])
-            plt.legend(bar_group, borderaxespad=0,
-                                  bbox_to_anchor=(0.99,0.99))
-            plt.subplots_adjust(right=0.95)
+            plt.legend(bar_group, borderaxespad=0.2,
+                                  bbox_to_anchor=(1.28,0.99))
+            plt.subplots_adjust(right=0.8)
             
             # Check wether to save the fig
             if self.save_bit:
