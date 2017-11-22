@@ -189,15 +189,6 @@ class dataPlot(object):
             
             plt.show()
         
-
-    def boxPlot(self):
-        """docstring for boxPlot"""
-        """Accordinig to the data draw Box graph.
-        Args:
-            xname: the label of x axis.
-            yname: the label of y axis.
-        """
-        
 if __name__ == '__main__':
     """The function test example"""
     # Set the data examples
