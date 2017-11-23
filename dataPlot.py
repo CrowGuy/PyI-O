@@ -1,5 +1,6 @@
-"""This is an class function for python plot by using matplotlib. 
-   @author: CowGuy
+""" 
+This is an class function for python plot by using matplotlib. 
+Author: CrowGuy
 """
 
 #!/usr/bin/env python
@@ -58,8 +59,12 @@ class dataPlot(object):
         graph_grid = self.parser.get(self.graph, 'GraphGrid')
         grid_style = self.parser.get(self.graph, 'GridStyle')
         img_name = self.parser.get(self.graph, 'ImgName')
+        img_path = self.parser.get(self.graph, 'ImgPath')
+        figx_size = float(self.parser.get(self.graph, 'FigureXsize'))
+        figy_size = float(self.parser.get(self.graph, 'FigureYsize'))
+        fig_dpi = float(self.parser.get(self.graph, 'FigureDpi'))
 
-        fig = plt.figure(figsize=[8,5], dpi=100)
+        fig = plt.figure(figsize=[figx_size, figy_size], dpi=fig_dpi)
         plt.grid(graph_grid,linestyle=grid_style)
         plt.title(self.title)
         plt.xlabel(xname)
@@ -74,7 +79,9 @@ class dataPlot(object):
             
             # Check wether to save the fig
             if self.save_bit:
-                plt.savefig(img_name)
+                if not os.path.isdir(img_path):
+                    os.makedirs(img_path)
+                plt.savefig(img_path + img_name)
             
             plt.show()
         else:
@@ -88,7 +95,9 @@ class dataPlot(object):
             
             # Check wether to save the fig
             if self.save_bit:
-                plt.savefig(img_name)
+                if not os.path.isdir(img_path):
+                    os.makedirs(img_path)
+                plt.savefig(img_path + img_name)
             
             plt.show()
 
@@ -106,9 +115,13 @@ class dataPlot(object):
         scat_group = self.parser.get(self.graph, 'GroupLabel').split(',')
         graph_grid = self.parser.get(self.graph, 'GraphGrid')
         grid_style = self.parser.get(self.graph, 'GridStyle')
+        img_path = self.parser.get(self.graph, 'ImgPath')
         img_name = self.parser.get(self.graph, 'ImgName')
-        
-        fig = plt.figure(figsize=[8,5], dpi=100)
+        figx_size = float(self.parser.get(self.graph, 'FigureXsize'))
+        figy_size = float(self.parser.get(self.graph, 'FigureYsize'))
+        fig_dpi = float(self.parser.get(self.graph, 'FigureDpi'))
+
+        fig = plt.figure(figsize=[figx_size, figy_size], dpi=fig_dpi)
         plt.grid(graph_grid, linestyle=grid_style)
         plt.title(self.title)
         plt.xlabel(xname)
@@ -122,7 +135,9 @@ class dataPlot(object):
             
             # Check wether to save the fig
             if self.save_bit:
-                plt.savefig(img_name)
+                if not os.path.isdir(img_path):
+                    os.makedirs(img_path)
+                plt.savefig(img_path + img_name)
             
             plt.show()
         else:
@@ -134,7 +149,9 @@ class dataPlot(object):
             
             # Check wether to save the fig
             if self.save_bit:
-                plt.savefig(img_name)
+                if not os.path.isdir(img_path):
+                    os.makedirs(img_path)
+                plt.savefig(img_path + img_name)
             
             plt.show()
 
@@ -153,9 +170,13 @@ class dataPlot(object):
         bar_group = self.parser.get(self.graph, 'GroupLabel').split(',')
         graph_grid = self.parser.get(self.graph, 'GraphGrid')
         grid_style = self.parser.get(self.graph, 'GridStyle')
+        img_path = self.parser.get(self.graph, 'ImgPath')
         img_name = self.parser.get(self.graph, 'ImgName')
+        figx_size = float(self.parser.get(self.graph, 'FigureXsize'))
+        figy_size = float(self.parser.get(self.graph, 'FigureYsize'))
+        fig_dpi = float(self.parser.get(self.graph, 'FigureDpi'))
 
-        fig = plt.figure(figsize=[8,5], dpi=100)
+        fig = plt.figure(figsize=[figx_size, figy_size], dpi=fig_dpi)
         plt.grid(graph_grid, linestyle=grid_style)
         plt.title(self.title)
         plt.xlabel(xname)
@@ -170,7 +191,9 @@ class dataPlot(object):
             
             # Check wether to save the fig
             if self.save_bit:
-                plt.savefig(img_name)
+                if not os.path.isdir(img_path):
+                    os.makedirs(img_path)
+                plt.savefig(img_path + img_name)
             
             plt.show()
         else:
@@ -185,7 +208,9 @@ class dataPlot(object):
             
             # Check wether to save the fig
             if self.save_bit:
-                plt.savefig(img_name)
+                if not os.path.isdir(img_path):
+                    os.makedirs(img_path)
+                plt.savefig(img_path + img_name)
             
             plt.show()
         
