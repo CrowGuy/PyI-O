@@ -42,7 +42,7 @@ The config of datPlot is [plotConfig.ini](https://github.com/CrowGuy/PyIO/blob/m
 #### Universal config params
 - `FigureXsize`: The image height, the value you set will multiply 100, unit is pixels.
 - `FigureYsize`: The image width, the value you set will multiply 100, unit is pixels.
-- `FigureDpi`:
+- `FigureDpi`: The Dots Per Inch of image.
 - `GraphGrid`: Wether to set grid line in background, the value is *True* or *False*, default value is *True*.
 - `GridStyle`: The style of grid, the default is *dotted*. 
 - `ImgPath`: The path where images to save, the default path is *./images/*.
