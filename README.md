@@ -34,9 +34,8 @@ $ sudo apt-get install python-tk
 This part we give the examples to introduce how to use the fileRW class and dataPlot class, if we want to see more detail examples, we can see [example_fileRW.py](https://github.com/CrowGuy/PyIO/blob/master/example_fileRW.py) and [example_dataPlot.py](https://github.com/CrowGuy/PyIO/blob/master/example_dataPlot.py).
 ### dataPlot
 The config of datPlot is [plotConfig.ini](https://github.com/CrowGuy/PyIO/blob/master/config/plotConfig.ini) which in config/ floder. This part we introduce the config details.
-<img src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_universal.png" width="500">
-![Universal config params descriptions](https://github.com/CrowGuy/PyIO/blob/master/images/Description_universal.png){:height="36px" width="36px"}.
 #### Universal config params
+<img src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_universal.png" width="700" style="display:block; margin:auto;">
 - `FigureXsize`: The image height, the value you set will multiply 100, unit is pixels.
 - `FigureYsize`: The image width, the value you set will multiply 100, unit is pixels.
 - `FigureDpi`:
@@ -44,21 +43,21 @@ The config of datPlot is [plotConfig.ini](https://github.com/CrowGuy/PyIO/blob/m
 - `GridStyle`: The style of grid, the default is *dotted*. 
 - `ImgPath`: The path where images to save, the default path is *./images/*.
 - `ImgName`: The image file name, default value are *Line_example.png*, *Scatter_example.png*, *Bar_example.png*.
+
 #### Line plot config params
-<img src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_line.png" width="48">
-![Line plot config params descriptions](https://github.com/CrowGuy/PyIO/blob/master/images/Description_line.png){:height="36px" width="36px"}.
+<img src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_line.png" width="700" style="display:block; margin:auto;">
 - `LineColor`: The color of line, more color value we can reference this [website].
 - `LineWidth`: The width of line.
 - `LabelName`: The label name of every item.
-- `MarkerType`: The marker type of line, more marker type we can reference this [website].                        
+- `MarkerType`: The marker type of line, more marker type we can reference this [website].   
+
 #### Scatter plot config params
-<img src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_scatter.png" width="48">
-![Scatter plot config params descriptions](https://github.com/CrowGuy/PyIO/blob/master/images/Description_scatter.png){:height="36px" width="36px"}.
+<img src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_scatter.png" width="700" style="display:block; margin:auto;">
 - `ScatterColor`: The color of scatter, the color value we can reference this [website].
 - `GroupLabel`: The label name of every item.
+
 #### Bar plot config params
-<img src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_bar.png" width="48">
-![Bar plot config params descriptions](https://github.com/CrowGuy/PyIO/blob/master/images/Description_bar.png){:height="36px" width="36px"}.
+<img src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_bar.png" width="700" style="display:block; margin:auto;">
 - `BarColor`: The color of bar, more color value we can reference this [website].
 - `BarWidth`: The width of bar.
 - `GroupLabel`: The label name of every item.
