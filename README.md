@@ -35,7 +35,7 @@ This part we give the examples to introduce how to use the fileRW class and data
 ### dataPlot
 The config of datPlot is [plotConfig.ini](https://github.com/CrowGuy/PyIO/blob/master/config/plotConfig.ini) which in config/ floder. This part we introduce the config details.
 #### Universal config params
-<img src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_universal.png" width="700" style="display:block; margin:auto;">
+![Universal config params](https://github.com/CrowGuy/PyIO/blob/master/images/Description_universal.png | width=100)
 - `FigureXsize`: The image height, the value you set will multiply 100, unit is pixels.
 - `FigureYsize`: The image width, the value you set will multiply 100, unit is pixels.
 - `FigureDpi`:
@@ -45,19 +45,19 @@ The config of datPlot is [plotConfig.ini](https://github.com/CrowGuy/PyIO/blob/m
 - `ImgName`: The image file name, default value are *Line_example.png*, *Scatter_example.png*, *Bar_example.png*.
 
 #### Line plot config params
-<img src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_line.png" width="700" style="display:block; margin:auto;">
+![Line config params](https://github.com/CrowGuy/PyIO/blob/master/images/Description_line.png | width=100)
 - `LineColor`: The color of line, more color value we can reference this [website].
 - `LineWidth`: The width of line.
 - `LabelName`: The label name of every item.
 - `MarkerType`: The marker type of line, more marker type we can reference this [website].   
 
 #### Scatter plot config params
-<img src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_scatter.png" width="700" style="display:block; margin:auto;">
+![Scatter config params](https://github.com/CrowGuy/PyIO/blob/master/images/Description_scatter.png | width=100)
 - `ScatterColor`: The color of scatter, the color value we can reference this [website].
 - `GroupLabel`: The label name of every item.
 
 #### Bar plot config params
-<img src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_bar.png" width="700" style="display:block; margin:auto;">
+![Bar config params](https://github.com/CrowGuy/PyIO/blob/master/images/Description_bar.png | width=100)
 - `BarColor`: The color of bar, more color value we can reference this [website].
 - `BarWidth`: The width of bar.
 - `GroupLabel`: The label name of every item.
