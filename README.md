@@ -35,9 +35,9 @@ This part we give the examples to introduce how to use the fileRW class and data
 ### dataPlot
 The config of datPlot is [plotConfig.ini](https://github.com/CrowGuy/PyIO/blob/master/config/plotConfig.ini) which in config/ floder. This part we introduce the config details.
 <img align="left" width="500"  src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_universal.png">
-<img align="right" width="500"  src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_line.png">
+<img align="left" width="500"  src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_line.png">
 <img align="left" width="500"  src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_scatter.png">
-<img align="right" width="500"  src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_bar.png">
+<img align="left" width="500"  src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_bar.png">
 #### Universal config params
 - `FigureXsize`: The image height, the value you set will multiply 100, unit is pixels.
 - `FigureYsize`: The image width, the value you set will multiply 100, unit is pixels.
@@ -47,15 +47,21 @@ The config of datPlot is [plotConfig.ini](https://github.com/CrowGuy/PyIO/blob/m
 - `ImgPath`: The path where images to save, the default path is *./images/*.
 - `ImgName`: The image file name, default value are *Line_example.png*, *Scatter_example.png*, *Bar_example.png*.
 
+
+
 #### Line plot config params
 - `LineColor`: The color of line, more color value we can reference this [website].
 - `LineWidth`: The width of line.
 - `LabelName`: The label name of every item.
 - `MarkerType`: The marker type of line, more marker type we can reference this [website].   
 
+
+
 #### Scatter plot config params
 - `ScatterColor`: The color of scatter, the color value we can reference this [website].
 - `GroupLabel`: The label name of every item.
+
+
 
 #### Bar plot config params
 - `BarColor`: The color of bar, more color value we can reference this [website].
