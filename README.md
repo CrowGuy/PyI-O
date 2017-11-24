@@ -35,7 +35,9 @@ This part we give the examples to introduce how to use the fileRW class and data
 ### dataPlot
 The config of datPlot is [plotConfig.ini](https://github.com/CrowGuy/PyIO/blob/master/config/plotConfig.ini) which in config/ floder. This part we introduce the config details.
 <img align="left" width="500"  src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_universal.png">
-<img align="left" width="550"  src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_line.png">
+<img align="left" width="500"  src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_line.png">
+<img align="left" width="500"  src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_scatter.png">
+<img align="left" width="500"  src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_bar.png">
 #### Universal config params
 - `FigureXsize`: The image height, the value you set will multiply 100, unit is pixels.
 - `FigureYsize`: The image width, the value you set will multiply 100, unit is pixels.
@@ -52,12 +54,10 @@ The config of datPlot is [plotConfig.ini](https://github.com/CrowGuy/PyIO/blob/m
 - `MarkerType`: The marker type of line, more marker type we can reference this [website].   
 
 #### Scatter plot config params
-![Scatter config params](https://github.com/CrowGuy/PyIO/blob/master/images/Description_scatter.png){:height="36px" width="36px"}.
 - `ScatterColor`: The color of scatter, the color value we can reference this [website].
 - `GroupLabel`: The label name of every item.
 
 #### Bar plot config params
-![Bar config params](https://github.com/CrowGuy/PyIO/blob/master/images/Description_bar.png){:height="36px" width="36px"}.
 - `BarColor`: The color of bar, more color value we can reference this [website].
 - `BarWidth`: The width of bar.
 - `GroupLabel`: The label name of every item.
