@@ -45,8 +45,7 @@ The config of datPlot is [plotConfig.ini](https://github.com/CrowGuy/PyIO/blob/m
 - `ImgName`: The image file name, default value are *Line_example.png*, *Scatter_example.png*, *Bar_example.png*.
 
 #### Line plot config params
-<img align="center" width="700"  src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_line.png">
-
+<img align="center" width="500"  src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_line.png">
 - `LineColor`: The color of line, more color value we can reference this [website].
 - `LineWidth`: The width of line.
 - `LabelName`: The label name of every item.
