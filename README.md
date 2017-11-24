@@ -32,12 +32,13 @@ $ sudo apt-get install python-tk
 
 ## Usage
 This part we give the examples to introduce how to use the fileRW class and dataPlot class, if we want to see more detail examples, we can see [example_fileRW.py](https://github.com/CrowGuy/PyIO/blob/master/example_fileRW.py) and [example_dataPlot.py](https://github.com/CrowGuy/PyIO/blob/master/example_dataPlot.py).
-### dataPlot
+### Config of dataPlot class
 The config of datPlot is [plotConfig.ini](https://github.com/CrowGuy/PyIO/blob/master/config/plotConfig.ini) which in config/ floder. This part we introduce the config details.
 <img align="left" width="420"  src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_universal.png">
 <img align="left" width="420"  src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_line.png">
 <img align="left" width="420"  src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_scatter.png">
 <img align="left" width="420"  src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_bar.png">
+
 #### Universal config params
 - `FigureXsize`: The image height, the value you set will multiply 100, unit is pixels.
 - `FigureYsize`: The image width, the value you set will multiply 100, unit is pixels.
@@ -48,16 +49,16 @@ The config of datPlot is [plotConfig.ini](https://github.com/CrowGuy/PyIO/blob/m
 - `ImgName`: The image file name, default value are *Line_example.png*, *Scatter_example.png*, *Bar_example.png*.
 
 #### Line plot config params
-- `LineColor`: The color of line, more color value we can reference this [website].
+- `LineColor`: The color of line, more color value we can reference this [website](https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.plot.html).
 - `LineWidth`: The width of line.
 - `LabelName`: The label name of every item.
-- `MarkerType`: The marker type of line, more marker type we can reference this [website].   
+- `MarkerType`: The marker type of line, more marker type we can reference this [website](https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.plot.html).   
 
 #### Scatter plot config params
-- `ScatterColor`: The color of scatter, the color value we can reference this [website].
+- `ScatterColor`: The color of scatter, the color value we can reference this [website](https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.plot.html).
 - `GroupLabel`: The label name of every item.
 
 #### Bar plot config params
-- `BarColor`: The color of bar, more color value we can reference this [website].
+- `BarColor`: The color of bar, more color value we can reference this [website](https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.plot.html).
 - `BarWidth`: The width of bar.
 - `GroupLabel`: The label name of every item.
