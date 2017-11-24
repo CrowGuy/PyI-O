@@ -34,7 +34,7 @@ $ sudo apt-get install python-tk
 This part we give the examples to introduce how to use the fileRW class and dataPlot class, if we want to see more detail examples, we can see [example_fileRW.py](https://github.com/CrowGuy/PyIO/blob/master/example_fileRW.py) and [example_dataPlot.py](https://github.com/CrowGuy/PyIO/blob/master/example_dataPlot.py).
 ### dataPlot
 The config of datPlot is [plotConfig.ini](https://github.com/CrowGuy/PyIO/blob/master/config/plotConfig.ini) which in config/ floder. This part we introduce the config details.
-<img src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_universal.png" width="48">
+<img src="https://github.com/CrowGuy/PyIO/blob/master/images/Description_universal.png" width="500">
 ![Universal config params descriptions](https://github.com/CrowGuy/PyIO/blob/master/images/Description_universal.png){:height="36px" width="36px"}.
 #### Universal config params
 - `FigureXsize`: The image height, the value you set will multiply 100, unit is pixels.
