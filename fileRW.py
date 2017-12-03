@@ -22,9 +22,10 @@ class fileRW:
     def writeTxt(self, data, delimiter, header=None):
         """Write data to text file. 
         Args:
-            data: The content you want to write
-            delimiter: A string format, the symbol which you want to split
-            header: The field name of data statistics 
+            data: The content you want to write.
+            delimiter: A string format, the delimiter txt file between 
+                       strings, which is split symbol.
+            header: The field name of data statistics. 
         """
         if self.path:
             if not os.path.isdir(self.path):
@@ -64,8 +65,9 @@ class fileRW:
     def readTxt(self, delimiter=None):
         """Read content of txt file, and insert to list.
         Args:
-            delimiter: A string format, the symbol you want to split.
-        
+            delimiter: A string format, the delimiter txt file between 
+                       strings, which is split symbol.
+
         Return:
             A list which contains all row and col in txt file.
             For example:
@@ -74,9 +76,7 @@ class fileRW:
         data = []
         with open(str(self.path) + str(self.fileName)) as file:
             if delimiter:
-                rows = file.read().split("\n")
-                if '' in rows:
-                    rows.remove('')
+                rows = file.read().splitlines()
                 for row in rows:
                     item = row.split(delimiter)
                     if '' in item:
@@ -123,7 +123,7 @@ if __name__ == '__main__':
     data = file1.readTxt( ",")
     
     # The example of writting and reading for xlsx file.
-    file2 = fileRW("mnistdata.xlsx")
-    file2.writeExcel("sheet1",data)
-    data = file2.readExcel(0)
+    #file2 = fileRW("mnistdata.xlsx")
+    #file2.writeExcel("sheet1",data)
+    #data = file2.readExcel(0)
 
