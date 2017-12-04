@@ -36,8 +36,11 @@ class fileRW:
             for field in header:
                 file.write(field + "\n")
         for row in data:
-            for cell in row:
-                file.write(str(cell) + str(delimiter))
+            for i, cell in enumerate(row):
+                if i == len(row) - 1:
+                    file.write(str(cell))
+                else:
+                    file.write(str(cell) + str(delimiter))
             file.write("\n")
         file.close()
     
