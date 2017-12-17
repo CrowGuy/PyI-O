@@ -31,17 +31,19 @@ class fileRW:
             if not os.path.isdir(self.path):
                 os.makedirs(self.path)
                 
-        file = open(str(self.path) + str(self.fileName), "w")
-        if header:
-            for field in header:
-                file.write(field + "\n")
-        for row in data:
-            for i, cell in enumerate(row):
-                if i == len(row) - 1:
-                    file.write(str(cell))
-                else:
-                    file.write(str(cell) + str(delimiter))
-            file.write("\n")
+        with open(str(self.path) + str(self.fileName), "w") as file:
+            if header:
+                for field in header:
+                    file.write(field + "\n")
+            for row in data:
+                file.write(str(delimiter).join(map(str, row)))
+                """
+                for i, cell in enumerate(row):
+                    if i == len(row) - 1:
+                        file.write(str(cell))
+                    else:
+                        file.write(str(cell) + str(delimiter))"""
+                file.write("\n")
         file.close()
     
     def writeExcel(self, sheet, data, header=None):
